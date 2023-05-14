@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{% static '/app/css/login.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <div class="title">{{ data }}</div>
+            <ul class="list">
+                <li class="item">
+                    <p>Username</p>
+                    <input name='name' type="text" placeholder="Input username">
+                </li>
+                <li class="item">
+                    <p>Password</p>
+                    <input name='password' type="text" placeholder="Input password">
+                </li>
+                <input type="submit" value="SignUp" class="submit">
+                <a href="{% url 'forget-password' %}">Forget the pasword</a>
+            </ul>
+        </form>
+    </div>
+</body>
+</html>
